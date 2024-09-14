@@ -74,7 +74,7 @@ namespace SiteLivro.DAO
 			string sql = "select * from tbLivros where id = " + id;
 
 			DataTable tabela = HelperDAO.ExecutaSelect(sql,null);
-			if (tabela.Rows.Count == 9)
+			if (tabela.Rows.Count == 0)
 			{
 				return null;
 			}
@@ -83,7 +83,7 @@ namespace SiteLivro.DAO
 				return MontarLivro(tabela.Rows[0]);
 			}
 		}
-		public List<LivroViewModel> Listagem(int id)
+		public List<LivroViewModel> Listagem()
 		{ 
 			List < LivroViewModel > lista = new List<LivroViewModel>();
 			string sql = "select * from tbLivros order by Titulo ";

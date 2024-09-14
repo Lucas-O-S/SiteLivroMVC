@@ -1,5 +1,51 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<LivroViewModel>
 @{
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Listagem Livros</h2>
+
+
+<a href="/Livro/Create"> Novo Negistro </a>
+<br />
+
+<table class="table table-responsive">
+	<tr>
+		<th>Ações</th>
+		<th>Id</th>
+		<th>Titulo</th>
+		<th>Autor 01</th>
+		<th>Autor 02</th>
+		<th>Editora</th>
+		<th>Ano de Lançamento</th>
+		<th>Edição</th>
+		<th>Preço Sugerido</th>
+
+	</tr>
+	@foreach (var livros in Model)
+	{
+		<tr>
+			<th>
+					<a href = "/Livro/Edit?@livros.id">Editar</a>
+						<a href = "javascript:ApagarLivro(@livros.id)">Excluir</a>
+
+			</th>
+			<th>@livros.id</th>
+			<th>@livros.titulo</th>
+			<th>@livros.autor1</th>
+			<th>@livros.autor2</th>
+			<th>@livros.editora</th>
+			<th>@livros.anoLancamento</th>
+			<th>@livros.edicao</th>
+			<th>@livros.precoSugerido</th>
+		</tr>
+	}
+</table>
+
+<script>
+	function ApagarLivro(id){
+		if(confirm("Confirmar a exclusão do registro?")){
+			location.href = "/Livro/Delete?Id=" + id;
+		}
+	}
+</script>

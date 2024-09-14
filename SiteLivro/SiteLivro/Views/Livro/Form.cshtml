@@ -1,0 +1,47 @@
+﻿@model LivroViewModel
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastro de Jogo</h2>
+
+<form action="Salvar" method="post">
+	<label for="id" class="control-label">ID</label>
+	<input type="number" name="Id" value = "@Model.id" />
+	<br />
+
+	<label for="descricao" class="control-label">Titulo</label>
+	<input type="text" name="titulo" value = "@Model.titulo"/>
+	<br />
+
+
+	<label for="valor_locacao" class="control-label">Autor 1</label>
+	<input type="text" name="autor1" value = "@Model.autor1"/>
+		<br />
+
+
+	<label for="data_aquisicao" class="control-label">Autor 2</label>
+	<input type="text" name="autor2" value = "@Model.autor2"/>
+		<br />
+
+
+	<label for="categoriaID" class="control-label">Editora</label>
+	<input type="text" name="editora" value = "@Model.editora"/>
+	<br />
+
+	<label for="categoriaID" class="control-label">Ano de Lançamento</label>
+	<input type="number" name="anoLancamento" value = "@Model.anoLancamento"/>
+	<br />
+
+	<label for="categoriaID" class="control-label">Edição</label>
+	<input type="categoriaID" name="edicao" value = "@Model.edicao"/>
+	<br />
+
+	<label for="categoriaID" class="control-label">Preço Sujerido</label>
+	<input type="text" name="precoSugerido" value = "@Model.precoSugerido"/>
+	<br />
+
+	<input type="submit" value="Salvar dados"/>
+	<br />
+</form>
